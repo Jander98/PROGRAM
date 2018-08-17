@@ -1,0 +1,25 @@
+Proceso sin_titulo
+	escribir "escriba la altura"
+	leer h
+	escribir "escriba la base"
+	leer b
+	a=(b*h)/2
+	escribir "el area es:",a
+FinProceso
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float h,b,a;
+cout<<"area de un triangulo"<<endl;
+cout<<"escriba la base"<<endl;
+cin>>b;
+cout<<"escriba la altura"<<endl;
+cin>>h;
+a=(b*h)/2;
+cout<<"el area es :"<<a;
+getch();
+	
+}
