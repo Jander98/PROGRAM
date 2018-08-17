@@ -3,7 +3,7 @@ Proceso sin_titulo
 	leer h
 	escribir "escriba la base"
 	leer b
-	a=(b*h)/2
+	a<-(b*h)/2
 	escribir "el area es:",a
 FinProceso
 
