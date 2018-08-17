@@ -1,0 +1,28 @@
+Algoritmo sin_titulo
+	escribir "Bolivianos: el hado propicio  "  
+	escribir "coronó nuestros votos y anhelo; "   
+	escribir "es ya libre, ya libre este suelo,"    
+	escribir "ya cesó su servil condición. "   
+	escribir "Al estruendo marcial que ayer fuera"    
+	escribir "y al clamor de la guerra horroroso  "  
+	escribir "siguen hoy, en contraste armonioso,  "  
+	escribir "dulces himnos de paz y de unión   "
+	
+FinAlgoritmo
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+
+{cout<<"Bolivianos: el hado propicio    ";
+cout<<"coronó nuestros votos y anhelo;    ";
+cout<<"es ya libre, ya libre este suelo, ";   
+cout<<"ya ceso su servil condicion.    ";
+cout<<"Al estruendo marcial que ayer fuera  ";  
+cout<<"y al clamor de la guerra horroroso ";   
+cout<<"siguen hoy, en contraste armonioso,";    
+cout<<"dulces himnos de paz y de union." ;    
+getch();	
+}
