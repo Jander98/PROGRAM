@@ -1,0 +1,15 @@
+Proceso 
+	escribir "holamundo"	
+	escribir "soy Alexander"
+FinProceso
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+
+{cout <<"holamundo"<<endl;
+cout<<"soy Alexander";
+getch();	
+}
