@@ -1,0 +1,27 @@
+Proceso sin_titulo
+	escribir "area del paralelogramo"
+	escribir "ingrese base"
+	leer b
+	escribir "ingrese altura"
+	leer h
+	a<-b*h
+	escribir "el area es :",a
+FinProceso
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float b,h,a;
+cout<<"area de un paralelogramo"<<endl;
+cout<<"ingrese la base"<<endl;
+cin>>b;
+cout<<"ingrese la altura"<<endl;
+cin >>h;
+a=b*h;
+cout<<"el area es:"<<a;
+getch();
+	
+}
+
