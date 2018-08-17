@@ -1,0 +1,25 @@
+Proceso sin_titulo
+	escribir "el area del circulo"
+	escribir "ingrese radio"
+	leer r
+	a<-r*r*pi
+	escribir "el area es :",a
+FinProceso
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+
+{float a,r,pi;
+pi=3,1415 ;
+cout<<"area de un circulo"<<endl;
+cout<<"ingrese el radio"<<endl;
+cin >>r;
+a=r*r*pi;
+cout<<"el area es:"<<a;
+getch();
+	
+}
+
