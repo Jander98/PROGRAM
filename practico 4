@@ -1,0 +1,22 @@
+Proceso sin_titulo
+	escribir "area del cuadrado"
+	escribir "ingrese el lado"
+	a<-l*l
+	escribir "el area es:",a
+FinProceso
+
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float l,a;
+cout<<"area de un cuadrado"<<endl;
+cout<<"ingrese el lado"<<endl;
+cin>>l;
+a=l*l;
+cout<<"el area es :"<<a;
+getch();
+	
+}
+
