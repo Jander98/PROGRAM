@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{int a,b,c;
+cout<<"ingrese la variable a"<<endl;
+cin>>a;
+cout<<"ingrese la variable b"<<endl;
+cin>>b;
+c=0;
+c=a;
+a=b;
+b=c;
+cout<<"valor de a es :"<<a<<endl;
+cout<<"valor de b es:"<<b<<endl;
+getch();
+}
+
+
+
+Proceso variable
+	escribir "ingrese el valor de a"
+	leer a
+	escribir "ingrese el valor de b"
+	Leer b
+	c=0
+	c=a
+	a=b
+	b=c
+	escribir "el valor de a es:",a
+	escribir "el valor de b es:",b
+FinProceso
