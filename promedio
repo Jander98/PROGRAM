@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float n,p=0;
+cout<<"ingrese 5 numeros"<<endl;
+cin>>n;
+p=p+n;
+cin>>n;
+p=p+n;
+cin>>n;
+p=p+n;
+cin>>n;
+p=p+n;
+cin>>n;
+p=p+n;
+cout<<"el promedio es:"<<p/5<<endl;
+getch();
+}
+
+
+Proceso promedio
+	escribir "ingrese 5 numeros"
+	p<-0
+	leer n
+	p=p+n
+	leer n
+	p=p+n
+	leer n
+	p=p+n
+	leer n
+	p=p+n
+	leer n
+	p=p+n
+	escribir "el promedio es:",p/5
+FinProceso
