@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float r,a,p,pi=3.1415;
+cout<<"AREA Y PERIMETRO DE UNA CIRCUNFERENCIA"<<endl;
+cout<<"ingrese el radio"<<endl;
+cin>>r;
+a=pi*r*r;
+p=2*pi*r;
+cout<<"el area es:"<<a<<endl;
+cout<<"el perimetro es:"<<p<<endl;
+getch();
+
+
+
+Proceso circunferencia
+	escribir "AREA Y PERIMETRO DE UNA CIRCUNFERENCIA"
+	escribir "ingrese el radio"
+	leer r
+	a=pi*r*r
+	p=2*pi*r
+	escribir "el area es:",a
+	escribir "el perimetro es:",p
+	
+FinProceso
