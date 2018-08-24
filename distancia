@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+using namespace std;
+void main()
+{float x1,x2,y1,y2,a,b,d;
+cout<<"CALCULO DE DISTANCIA ENTRE DOS PUNTOS (X,Y)"<<endl;
+cout<<"ingrese x1"<<endl;
+cin>>x1;
+cout<<"ingrese y1"<<endl;
+cin>>y1;
+cout<<"ingrese x2"<<endl;
+cin>>x2;
+cout<<"ingrese y2"<<endl;
+cin>>y2;
+a=pow((x2-x1),2);
+b=pow((y2-y1),2);
+d=sqrt(a+b);
+cout<<"la distancia es:"<<d<<endl;
+getch();
+}
+
+
+
+Proceso distancia
+	escribir "CALCULO DE DISTANCIA ENTRE DOS PUNTOS (X,Y)"
+	escribir "ingrese x1"
+	leer x1
+	escribir "ingrese y1"
+	leer y1
+	escribir "ingrese x2"
+	leer x2
+	escribir "ingrese y2"
+	leer y2
+	a<-(x2-x1)*(x2-x1)
+	b<-(y2-y1)*(y2-y1)
+	d<-rc(a+b)
+	escribir "la distancia es:",d
+FinProceso
