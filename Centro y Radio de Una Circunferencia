@@ -1,0 +1,66 @@
+Proceso centroradio
+	escribir "Centro y radio de una circunferencia";
+   escribir "ingrese las variables x1 y y1";
+	leer x1;
+	leer y1;
+   escribir "ingrese las variables x2 y y2";
+	leer x2;
+	leer y2;
+  escribir "ingrese las variables x3 y y3";
+	leer x3;
+	leer y3;
+	a<-(x1*y2+x3*y1+x2*y3)-(x3*y2+x1*y3+x2*y1);
+	p1<-(-((x1*x1)+(y1*y1)));
+	p2<-(-((x2*x2)+(y2*y2)));
+	p3<-(-((x3*x3)+(y3*y3)));
+	ad<-(p1*y2+p3*y1+p2*y3)-(p3*y2+p1*y3+p2*y1);
+	ae<-(p2*x1+p1*x3+p3*x2)-(p2*x3+p3*x1+p1*x2);
+	af<-(p3*x1*y2+p2*x3*y1+p1*x2*y3)-(p1*x3*y2+p2*x1*y3+p3*x2*y1);
+	d<-ad/a;
+	e<-ae/a;
+	f<-af/a;
+	h<-(-1/2)*d;
+	k<-(-1/2)*e;
+	r<-rc((h*h)+(k*k)-f);
+	escribir "las coordenadas son: ",h,",",k,;
+	escribir "el radio es:",r;
+FinProceso
+
+
+
+
+
+  #include "stdafx.h"
+	#include <iostream>
+	#include "conio.h"
+	#include "math.h"
+	using namespace std;
+	void main()
+	{double x1,y1,x2,y2,x3,y3,a,p1,p2,p3,ad,ae,af,d,e,f,h,k,r;
+	cout<<"CENTRO Y RADIO DE UNA CIRCUNFERENCIA"<<endl;
+  cout<<"Ingrese la variable x1 y y1 "<<endl;
+	cin>>x1;
+	cin>>y1;
+	cout<<"Ingrese la variable x2 y y2 "<<endl;
+	cin>>x2;
+	cin>>y2;
+	cout<<"Ingrese la variable x3 y y3 "<<endl;
+	cin>>x3;
+	cin>>y3;
+	a=(x1*y2+x3*y1+x2*y3)-(x3*y2+x1*y3+x2*y1);
+	p1=(-((x1*x1)+(y1*y1)));
+	p2=(-((x2*x2)+(y2*y2)));
+	p3=(-((x3*x3)+(y3*y3)));
+	ad=(p1*y2+p3*y1+p2*y3)-(p3*y2+p1*y3+p2*y1);
+	ae=(p2*x1+p1*x3+p3*x2)-(p2*x3+p3*x1+p1*x2);
+	af=(p3*x1*y2+p2*x3*y1+p1*x2*y3)-(p1*x3*y2+p2*x1*y3+p3*x2*y1);
+	d=ad/a;
+	e=ae/a;
+	f=af/a;
+	h=(-1/2)*d;
+	k=(-1/2)*e;
+	r=sqrt((h*h)+(k*k)-f);
+	cout<<"Las coordenadas de centro de la circunferencia son:"<<h<<","<<k<<endl;
+	cout<<"El radio de la circunferencia es:"<<r<<endl;
+	getch();
+	}
