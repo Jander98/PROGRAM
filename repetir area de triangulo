@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{float n,h,b,a;
+do
+{cout<<"area de un triangulo"<<endl;
+cout<<"escriba la base"<<endl;
+cin>>b;
+cout<<"escriba la altura"<<endl;
+cin>>h;
+a=(b*h)/2;
+cout<<"el area es :"<<a;
+cout<< "desea continuar? 1.si  2.no"<<endl;
+cin>>n;
+}
+while (n==1);
+getch();
+}
