@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include  "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{int l,a,n=1,i;
+cout<<"area de un cuadrado"<<endl;
+cout<<"cuantas area calculara"<<endl;
+cin>>i;
+
+while (n<=i)
+{n=n+1;
+cout<<"ingrese el lado"<<endl;
+cin>>l;
+a=l*l;
+cout<<"el area es :"<<a<<endl;
+}
+getch();
+	
+}
