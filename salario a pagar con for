@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{	float sb,sn,sm=2060;
+    int n;
+	cout<<"ingrese numero de trabajadores"<<endl;
+	cin>>n;
+	for (int i=1;i<=n;i++)
+	{	cout<<"ingrese el valor del salario bruto"<<endl;
+	    cin>>sb;
+		if (sb>=4*sm)
+			sn=sb-(0.251*sb);
+		else
+			sn=sb-(0.121*sb);
+		cout<<"el salario neto es:"<<sn<<endl;
+	}
+	getch();
+}
