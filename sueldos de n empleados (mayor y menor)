@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main()
+{	int s,n,m=0,me=9999999;
+    cout<<"ingrese el numero de empleados"<<endl;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+      {cout<<"ingrese el salario"<<endl;
+	   cin>>s;
+	   if (s>m)
+		  m=s;
+	   if(s<me)
+		  me=s;
+	  }
+	cout<<"mayor es:"<<m<<endl;
+	cout<<"menor es:"<<me<<endl;
+	getch();
+}
