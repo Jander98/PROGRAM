@@ -5,7 +5,7 @@
 using namespace std;
 void main()
 {double a,b,c,x,r1,r2,i,n ;
-cout<<"ax´+bx+c"<<endl;
+cout<<"ax² +bx+c"<<endl;
 cout<<"ingrese a"<<endl;
 cin>>a;
 cout<<"ingrese b"<<endl;
