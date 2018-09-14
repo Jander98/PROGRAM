@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+void main()
+{double a,b,c,x,r1,r2,i,n ;
+cout<<"ax´+bx+c"<<endl;
+cout<<"ingrese a"<<endl;
+cin>>a;
+cout<<"ingrese b"<<endl;
+cin>>b;
+cout<<"ingrese c"<<endl;
+cin>>c;
+x=b*b-4*a*c;
+if (x==0)
+	{cout<<"unica solucion"<<endl;
+    r1=(-b)/2*a;
+	cout<<"x:"<<r1<<endl;
+    }
+else
+   { if (x>0)
+	   {cout<<"dos soluciones reales"<<endl;
+		r1=((-b)+sqrt(x))/2*a;
+		r2=((-b)-sqrt(x))/2*a;
+		cout<<"x1:"<<r1<<endl;
+        cout<<"x2:"<<r2<<endl;
+        }
+    
+	else 
+	  {	if(x<0)
+		{cout<<"solucion imaginaria"<<endl;
+         n=x*(-1);
+	     r1=(-b)/2*a;
+	     i=sqrt(n);
+	     cout<<"x1:"<<r1<<"+"<<i<<"i"<<endl;
+         cout<<"x2:"<<r1<<"-"<<i<<"i"<<endl;
+        }
+       }
+   }
+
+getch();
+}
