@@ -1,0 +1,16 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main()
+{int n,t=1,s=0,p=0;
+cout<<"ingrese los n numeros pares a sumar"<<endl;
+cin>>n;
+while(t<=n)
+{p=p+2;
+t=t+1;
+s=s+p;
+}
+cout<<"la suma es:"<<s<<endl;
+getch();
+}
