@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{int n;
+cout<<"ingrese su edad"<<endl;
+cin>>n;
+if (n>=18)
+{cout<<"ingrese tipo de votacion  (1.municipio 2.nacional)"<<endl;
+ cin>>n;
+   if(n==1)
+	   {cout<<"ingrese su ciudadania (1.nacional 2.extranjero)"<<endl;
+        cin>>n;
+	   if (n==1)
+		   cout<<"usted puede votar"<<endl;
+	   else
+		   cout<<"usted no puede votar"<<endl;
+   }
+   else 
+	   {cout<<"ingrese su ciudadania (1.nacional 2.extranjero)"<<endl;
+       cin>>n;
+	   if (n==2)
+		   cout<<"usted puede votar"<<endl;
+	   else
+		   cout<<"usted no puede votar"<<endl;
+   }
+   
+   }
+else
+	cout<<"usted no puede votar"<<endl;
+getch();
+}
