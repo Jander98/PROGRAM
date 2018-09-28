@@ -1,0 +1,63 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+void imaginario(float a, float b ,float c, float &r1 , float &i);
+float unica(float a, float b, float c);
+float d(float a,float b,float c);
+void real(float a,float b,float c, float &x1, float &x2); //el void no devuelve nada y el & devuelve solo los varlores
+ 
+void main()
+ {
+	 float i,r1,r,a,b,c,valor1,valor2,di;
+     cout<<"ingrese a,b,c"<<endl;
+     cin>>a>>b>>c;
+     di=d(a,b,c);
+  
+  if (di>0)
+   
+   {   real(a,b,c,valor1,valor2);
+       cout<<"raiz 1:"<<valor1<<endl;
+	   cout<<"raiz 2:"<<valor2<<endl;
+   }
+ else
+	 {
+	   if (di==0)
+	    { r=unica(a,b,c);
+          cout<<"raiz unica"<<r<<endl;
+        }
+       else
+	      { if(di<0)
+		     {cout<<"solucion imaginaria"<<endl;
+              imaginario(a,b,c,r1,i);
+	          cout<<"raiz 1:"<<r1<<"+"<<i<<"i"<<endl;
+              cout<<"raiz 2:"<<r1<<"-"<<i<<"i"<<endl;
+		     }
+		  }
+     }
+		 getch();
+  
+  }
+
+ float d(float a,float b, float c)
+ {float di;
+ di=(b*b)-(4*a*c);
+ return di;
+ }
+ void real(float a,float b,float c, float &x1, float &x2)
+ {
+    x1=(-b+sqrt(b*b-4*a*c))/2;
+	x2=(-b-sqrt(b*b-4*a*c))/2;
+ }
+ float unica(float a, float b, float c)
+ {float r;
+ r=(-b)/2*a;
+ return r;
+ }
+ void imaginario(float a, float b ,float c, float &r1 , float &i)
+ {float n;
+	          n=(b*b)-(4*a*c)*(-1);
+	          r1=(-b)/2*a;
+	          i=sqrt(n);
+ }
