@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+int numca;
+float preciot, totalap;
+
+do {
+	cout<<"ingresar numero de camisas:"<<endl;
+	cin>>numca;}
+while (numca<0);
+
+do {
+	cout<<"ingresar el precio total:"<<endl;
+	cin>>preciot;}
+while (preciot<0);
+
+if (numca>5)
+	totalap=preciot-(preciot*0.3);
+else
+	totalap=preciot-(preciot*0.2);
+
+cout<<"el total a pagar es:"<<totalap;
+getch();
+}
