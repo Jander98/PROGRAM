@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int serie(int n);
+void main()
+{int n,s=0;
+cout<<"ingrese el numero del factorial"<<endl;
+cin>>n;
+s=serie(n);
+cout<<"el factorial es:"<<s<<endl;
+getch();
+}
+
+int serie(int n)
+{int s=1;
+for(int i=1;i<=n;i++)
+{ 
+	s=s*i;
+}   
+return s;
+}
