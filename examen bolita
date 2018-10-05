@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	double n,vt,a;
+	cout<<"introduzca el numero de la bolita"<<endl;
+	cin>>n;
+	cout<<"introduzca el valor total"<<endl;
+	cin>>vt;
+	if (n==3)
+		{a=vt;}
+	if (n==5)
+		{a=vt*0.05;}
+	if (n==7)
+		{a=vt*0.2;}
+	if (n==9)
+		{a=vt*0.5;}
+	if (n!=9 && n!=7 && n!=5 && n!=3)
+		cout<<"error la bolita no tiene descuento"<<endl;
+	a=vt-a;
+	cout<<"este es su precio total "<<a<<endl;
+	getch (); 
+}
