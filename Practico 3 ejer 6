@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int serie(int n,int x);
+void main()
+{int x, n,s=0;
+cout<<"ingrese el limite de la serie exponecial"<<endl;
+cin>>n;
+cout<<"ingrese el valor de la base"<<endl;
+cin>>x;
+s=serie(n,x);
+cout<<"el resultado de la serie es:"<<s<<endl;
+getch();
+}
+
+int serie(int n,int x)
+{int s=0,t=1;
+  for(int i=1;i<=n;i++)
+   { t=t*x;
+	s=s+t;
+   }   
+return s;
+}
