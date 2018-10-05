@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int serie(int n);
+void main()
+{int n,s=0;
+cout<<"ingrese el limite de la serie"<<endl;
+cin>>n;
+s=serie(n);
+cout<<"el resultado de la serie es:"<<s<<endl;
+getch();
+}
+
+int serie(int n)
+{int s=0;
+for(int i=1;i<=n;i++)
+	s=s+i;
+return s;
+}
