@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+int suma(int n);
+void main()
+{int n,r;
+cout<<"ingrese n:"<<endl;
+cin>>n;
+r=suma(n);
+cout<<"la suma de sus digistos es :"<<r<<endl;
+getch();
+
+}
+int suma(int n)
+{int s=0,p;
+  while (n!=0)
+  {  p=n%10;
+     n=n/10;
+     s=s+p;
+  }
+  return s;
+}
