@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+float p(float x, float b);
+void main()
+{float x,b,t;
+cout<<"ingrese el valor de la base"<<endl;
+cin>>x;
+cout<<"ingrese el limite n"<<endl;
+cin>>b;
+t=p(x,b);
+cout<<"el valor es:"<<t<<endl;
+getch();
+}
+float p(float x, float b)
+{float s=5,c=1,p=1;
+  for(int i=1;i<=b;i++)
+  {    c=c*x;
+	   p=p*i;
+       s=s+c/p;
+  }
+  return s;
+}
