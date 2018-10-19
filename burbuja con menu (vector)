@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
+#include "stdlib.h"
 #define MAX 100
 
 using namespace std;
@@ -34,7 +35,7 @@ void main()
 	case 3:mostrar(vec,n);break;
 	case 4:cout<<"adios"<<endl;break;
 	default:cout<<"opcion invalida"<<endl;break;
-	}
+	}system("cls");
 	}while(op!=4);
 	getch();
 }
