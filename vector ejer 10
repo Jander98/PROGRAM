@@ -1,0 +1,64 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+void cargar1(int a[],int n);
+void cargar2(int b[],int m);
+void proceso(int a[],int b[], int c[],int n, int m);
+void mostrar(int c[],int n, int m);
+void main()
+{int a[MAX],b[MAX], c[MAX],n,m;
+
+cout<<"ingrese el tamaño de a"<<endl;cin>>n;
+cout<<"ingrese el tamaño de b"<<endl;cin>>m;
+
+cargar1(a,n);
+cout<<"\n";
+cargar2(b,m);
+proceso(a,b,c,n,m);
+cout<<"\n";
+mostrar(c,n,m);
+
+getch();
+}
+
+void cargar1(int a[],int n)
+{ cout<<"  ingrese valores para a  "<<endl;
+ for(int i=0;i<n;i++)
+  {cout<<"a["<<i+1<<"]:";
+   cin>>a[i];
+  }
+}
+void cargar2(int b[],int m)
+{cout<<"  ingrese valores p ara b  "<<endl;
+	for(int j=0;j<m;j++)
+   {cout<<"b["<<j+1<<"]:";
+    cin>>b[j];
+   }
+}
+void proceso(int a[],int b[], int c[],int n, int m)
+{int k=0,i=0,j=0;
+     while(i<m || i<n)
+	 {  if(a[i]<b[j])
+	     {c[k]=a[i];
+	      i++; k++; j++;
+	     }
+	    else
+		 { c[k]=b[j];
+	      k++; j++; i++;
+	     }
+	 }
+}
+void mostrar(int c[],int n, int m)
+{ cout<<"   Vector ordenado   "<<endl;
+	if (n>m)
+	for(int k=0;k<n;k++)
+    { 
+		cout<<"c["<<k+1<<"]:"<<c[k]<<endl;
+}
+else
+	for(int k=0;k<m;k++)
+  cout<<"c["<<k+1<<"]:"<<c[k]<<endl;
+
+}
