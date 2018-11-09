@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define max 100
+using namespace std;
+void cargar(int vec[],int n);
+void pos(int vec[],int v[],int x ,int n);
+void mostrar(int v[],int n);
+void main()
+{ int vec[max],v[max], x,n;
+cout<<"ingrese el tamaño"<<endl; cin>>n;
+cout<<"ingrese el valor de x"<<endl; cin>>x;
+cout<<"ingrese los numeros del vector"<<endl;
+
+cargar(vec,n);
+pos(vec,v,x,n);
+
+cout<<"las posiciones relativas son:"<<endl;
+mostrar(v,n);
+getch();
+}
+
+
+void cargar(int vec[],int n)
+{for(int i=0;i<n;i++)
+   cin>>vec[i];
+}
+void pos(int vec[],int v[],int x ,int n)
+{int j=0;
+for (int i=0;i<n;i++)
+	{
+	if(vec[i]==x)
+		{j++;
+         v[j]=i;}
+    }
+}
+void mostrar(int v[],int n)
+{for (int j=0;j<n;j++)
+   cout<<v[j]<<endl;
+}
