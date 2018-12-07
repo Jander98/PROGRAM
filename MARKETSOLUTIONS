@@ -1,0 +1,335 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#include <stdlib.h>
+#define MAXROW 100
+#define MAXCOL 100
+
+using namespace std;
+bool agregarproductos(string matrix[MAXROW][MAXCOL], int tamtotal,int tam);
+void cambiarubicacion(string matrix[MAXROW][MAXCOL], int tamtotal);
+void cambiarprecio(string matrix[MAXROW][MAXCOL], int tamtotal);
+void buscador(string matrix[MAXROW][MAXCOL],string palabra,int tamtotal);
+void categorias(string matrix[MAXROW][MAXCOL], int tamtotal);
+
+void main(){	
+system("color 0f");
+bool resp=false;
+int user,op,clave=12345,intclave,cont=0,newclave,newclave2,tam,tamtotal=0,clave2=54321;
+string tabla[MAXROW][MAXCOL],palabra;
+do{
+	do{
+		
+		cout<<"Escoga una opcion:"<<endl;
+		cout<<"1)ADMINISTRADOR MERCADO"<<endl;
+		cout<<"2)USER PUBLICO"<<endl;
+		cout<<"3)ADMINISTRADOR MUNICIPALIDAD"<<endl;
+		cout<<"4)Salir"<<endl;
+		cin>>user;
+		system("cls");
+		if (user!=1 && user!=2 && user!=3)
+		{
+			cout<<"ERROR OPCION INVALIDA, INGRESE UN NUMERO VALIDO"<<endl;
+			cout<<" "<<endl;
+		}
+	}while(user!=1 && user!=2 && user!=3);
+
+		if(user==1) //ADMINISTRADOR
+		{
+				cout<<"Antes de entrar el administrador del programa, ingrese lo siguiente"<<endl;
+				do{
+					cout<<"CLAVE: ";
+					cin>>intclave;
+					if(intclave!=clave)
+					{
+					system("cls");
+					cout<<"Clave incorrecta"<<endl;
+					}
+					cont++;
+				}while(intclave!=clave && cont!=3);
+				if (intclave==clave)
+				{
+					system("cls");
+					do{
+						cout<<"---------MENU DE ADMIN-------"<<endl;
+						cout<<"1)Cambiar clave"<<endl;
+						cout<<"2)Agregar productos"<<endl;
+						cout<<"3)Agregar la ubicacion del local"<<endl;
+						cout<<"4)Cambiar precios"<<endl;
+						cout<<"5)Salir al menu de usuarios"<<endl;
+						cin>>op;
+						system("cls");
+						switch(op)
+						{
+						case 1: //Cambiar clave
+							do
+							{
+							cout<<"Ingrese la nueva clave: ";
+							cin>>newclave;
+							cout<<"Por favor repita la clave: ";
+							cin>>newclave2;
+							if (newclave!=newclave2)
+								{
+								system("cls");
+								cout<<"Error, Vuelva a hacerlo denuevo"<<endl;
+								}
+							}while(newclave!=newclave2);
+							if (newclave==newclave2)
+								clave=newclave;
+							cout<<"Nueva clave guarda"<<endl;
+							system("pause");
+							system("cls");
+						break;
+						case 2: //Agregar productos
+						cout<<"ingrese la cantidad de productos que se van a agregar"<<endl;
+						cin>>tam;
+						agregarproductos(tabla,tamtotal,tam);
+						tamtotal=tamtotal+tam;
+						break;
+						case 3: //cambiar ubicacion
+							if (resp=false)
+								cout<<"Sin Datos"<<endl;
+							else
+								cambiarubicacion(tabla,tamtotal);
+						break;
+						case 4: //Cambiar precios
+							if (resp=false)
+								cout<<"Sin Datos"<<endl;
+							else
+								cambiarprecio(tabla,tamtotal);
+						break;
+						case 5:
+							cout<<"Saliendo al menu de usuarios..."<<endl;
+							system("pause");
+							system("cls");
+						break;
+						default:
+							cout<<"ERROR OPCION INVALIDA"<<endl;
+							cout<<" "<<endl; 
+						break;
+
+						}
+					}while(op!=5);
+				}
+				else //Numero de intentos
+				{
+					cout<<"Se Acabo el numero de intentos"<<endl;
+					cout<<"Por motivos de seguridad, vuelva a intentarlo en 5 min"<<endl;
+					system("pause");
+					system("cls");
+				}
+		}
+		if(user==2) //USUARIO PUBLICO
+		{
+				cout<<"Bienvenido a U-MARKET"<<endl;
+				cout<<"Una aplicacion por MARKET SOLUTION"<<endl;
+				system("pause");
+				system("cls");
+				cout<<"En que podemos ayudarlo?"<<endl;
+				do{
+					cout<<"*******************MENU*******************"<<endl;
+					cout<<"1)Buscador"<<endl;
+					cout<<"2)Todos los productos"<<endl;
+					cout<<"3)Salir al menu de usuarios"<<endl;
+					cout<<"Por favor escoga una opcion:"<<endl;
+					cin>>op;
+					system("cls");
+					switch(op)
+					{
+					case 1: //Buscador
+						cin.ignore();
+						if (resp=false)
+								cout<<"Sin Datos,Por favor consulte con el ADMIN"<<endl;
+							else
+							{	
+								
+								cout<<"BUSCADOR"<<endl;
+								cout<<"Escriba el nombre de un producto para buscar mas informacion sobre el: ";
+								getline(cin,palabra);
+								buscador(tabla,palabra,tamtotal);
+								system("pause");
+								system("cls");
+							}
+					break;
+					case 2:	//Categorias
+			
+						cout<<"Categorias"<<endl;
+						if (resp=false)
+								cout<<"Sin Datos,Por favor consulte con el ADMIN"<<endl;
+							else
+								categorias(tabla,tamtotal);
+						system("pause");
+						system("cls");
+					break;
+					case 3: //Salir
+						cout<<"Saliendo al menu de opciones..."<<endl;
+						system("pause");
+						system("cls");
+					break;
+					default:
+						cout<<"ERROR OPCION INVALIDA"<<endl;
+						cout<<" "<<endl; 
+					break;
+					}
+				}while(op!=3);
+		}
+		if(user==3) //ADMINISTRADOR MUNICIPAL
+		{
+				cout<<"Antes de entrar el administrador del programa, ingrese lo siguiente"<<endl;
+				do{
+					cout<<"CLAVE: ";
+					cin>>intclave;
+					if(intclave!=clave2)
+					{
+					system("cls");
+					cout<<"Clave incorrecta"<<endl;
+					}
+					cont++;
+				}while(intclave!=clave2 && cont!=3);
+				if (intclave==clave2)
+				{
+					system("cls");
+					do{
+						cout<<"---------MENU DE ADMIN MUNICIPAL-------"<<endl;
+						cout<<"1)Cambiar clave"<<endl;
+						cout<<"2)Agregar productos"<<endl;
+						cout<<"3)Agregar la ubicacion del local"<<endl;
+						cout<<"4)Cambiar precios"<<endl;
+						cout<<"5)Salir al menu de usuarios"<<endl;
+						cin>>op;
+						system("cls");
+						switch(op)
+						{
+						case 1: //Cambiar clave
+							do
+							{
+							cout<<"Ingrese la nueva clave: ";
+							cin>>newclave;
+							cout<<"Por favor repita la clave: ";
+							cin>>newclave2;
+							if (newclave!=newclave2)
+								{
+								system("cls");
+								cout<<"Error, Vuelva a hacerlo denuevo"<<endl;
+								}
+							}while(newclave!=newclave2);
+							if (newclave==newclave2)
+								clave=newclave;
+							cout<<"Nueva clave guarda"<<endl;
+							system("pause");
+							system("cls");
+						break;
+						case 2: //Agregar productos
+						cout<<"ingrese la cantidad de productos que se van a agregar"<<endl;
+						cin>>tam;
+						agregarproductos(tabla,tamtotal,tam);
+						tamtotal=tamtotal+tam;
+						break;
+						case 3: //cambiar ubicacion
+							if (resp=false)
+								cout<<"Sin Datos"<<endl;
+							else
+								cambiarubicacion(tabla,tamtotal);
+						break;
+						case 4: //Cambiar precios
+							if (resp=false)
+								cout<<"Sin Datos"<<endl;
+							else
+								cambiarprecio(tabla,tamtotal);
+						break;
+						case 5:
+							cout<<"Saliendo al menu de usuarios..."<<endl;
+							system("pause");
+							system("cls");
+						break;
+						default:
+							cout<<"ERROR OPCION INVALIDA"<<endl;
+							cout<<" "<<endl; 
+						break;
+
+						}
+				}while(op!=5);
+			}
+		}
+}while(user!=4);
+system("cls");
+cout<<"************************************"<<endl;
+cout<<"**************GRACIAS***************"<<endl;
+cout<<"************************************"<<endl;
+getch();
+}
+
+bool agregarproductos(string matrix[MAXROW][MAXCOL], int tamtotal,int tam)
+{
+	bool resp=true;
+	cin.ignore();
+	for(int i=tamtotal;i<tam+tamtotal;i++)
+	{
+		
+		cout<<"PRODUCTO Numero "<<i<<endl;
+		cout<<"Digite nombre para el producto:";
+		getline(cin,matrix[i][0]);
+		cout<<"Digite el Precio del producto: ";
+		getline(cin,matrix[i][1]);
+		cout<<"Escriba la ubicacion del producto (Sector/Pasillo/Numero):";
+		getline(cin,matrix[i][2]);
+	}
+	system("pause");
+	system("cls");
+	
+	return resp;
+}
+void cambiarubicacion(string matrix[MAXROW][MAXCOL], int tamtotal)
+{
+	int n,a;
+	cin.ignore();
+	cout<<"----------------Producto/Precio/Ubicacion----------------------"<<endl;
+	for(int i=0;i<tamtotal;i++)
+	{
+		cout<<"["<<i<<"] - "<<matrix[i][0]<<" - "<<matrix[i][1]<<"$ "<<matrix[i][2]<<endl;
+	}
+		cout<<"Digite el numero del producto que desea cambiar de ubicacion "<<endl;
+		cin>>n;
+		cin.ignore();
+		cout<<"Digite la nueva ubicacion(Sector/Pasillo/Numero) para el producto N"<<n<<" "<<matrix[n][0]<<endl;
+		getline(cin,matrix[n][2]);
+
+	system("pause");
+	system("cls");
+}
+void cambiarprecio(string matrix[MAXROW][MAXCOL], int tamtotal)
+{
+	int n,a;
+	cin.ignore();
+	cout<<"----------------Producto/Precio/Ubicacion----------------------"<<endl;
+	for(int i=0;i<tamtotal;i++)
+	{
+		cout<<"["<<i<<"] - "<<matrix[i][0]<<" - "<<matrix[i][1]<<"$ "<<matrix[i][2]<<endl;
+	}
+		cout<<"Digite el numero del producto que desea cambiar de Precio "<<endl;
+		cin>>n;
+		cin.ignore();
+		cout<<"Digite el nuevo precio para el producto N"<<n<<" "<<matrix[n][0]<<endl;
+		getline(cin,matrix[n][1]);
+	system("pause");
+	system("cls");
+}
+void buscador(string matrix[MAXROW][MAXCOL],string palabra,int tamtotal)
+{
+	for(int i=0;i<tamtotal;i++)
+		if(palabra==matrix[i][0])
+		{
+		cout<<"----------------Producto/Precio/Ubicacion----------------------"<<endl;
+		cout<<"["<<i<<"] - "<<matrix[i][0]<<" - "<<matrix[i][1]<<"$ "<<matrix[i][2]<<endl;
+		}
+}
+void categorias(string matrix[MAXROW][MAXCOL], int tamtotal)
+{
+	cin.ignore();
+	cout<<"----------------Producto/Precio/Ubicacion----------------------"<<endl;
+	for(int i=0;i<tamtotal;i++)
+	{
+		cout<<"["<<i<<"] - "<<matrix[i][0]<<" - "<<matrix[i][1]<<"$ "<<matrix[i][2]<<endl;
+	}
+}
